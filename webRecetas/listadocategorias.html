@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css" />
+	<title>Listado de categorias</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	##javascript_desplegables##
+	<script>
+        
+		function cargarplatos(idcategoria) { 
+			$.ajax({
+				url:"index.php?accion=listadoplatos&tipo=categoria&idcategoria=" + idcategoria + "&id=1",
+				success: function (resultado) {
+					$("#listadoplatos" + idcategoria).html("");
+					$("#listadoplatos" + idcategoria).html(resultado);
+
+
+				},
+				error: function () {
+					alert("Se ha producido un error");
+				}
+			})
+		}
+		
+
+		function cargarinfo(idplato) {
+			//alert(idplato);
+            $.ajax({
+				url:"index.php?accion=infoplato&idplato=" + idplato + "&id=1",
+				success: function (resultado) {
+                    window.location.href = "index.php?accion=infoplato&idplato=" + idplato + "&id=1";
+
+				},
+				error: function () {
+					alert("Se ha producido un error");
+				}
+			})
+		}
+	</script>
+    
+</head>
+<body>
+    <div id="navbar-container"></div>
+    <div class="listado-container">
+        <ul>
+            ##fila##
+            <li>
+                <img src="##foto##" onclick="cargarplatos('##idcategoria##');"></img>
+                <span>##nombre##</span>
+            </li>
+
+            <div id="listadoplatos##idcategoria##"></div>
+            ##fila##
+            
+        </ul>
+    </div>
+
+    <footer id="footer">
+        <h2>Restraunt &copy; all rights reserved</h2>
+		<p id="resultado">La ultima carga de la API es: </p>
+        
+        <script>
+            // Esperar a que el documento HTML esté completamente cargado
+            document.addEventListener("DOMContentLoaded", function() {
+                // Obtener el elemento donde queremos mostrar el resultado
+                var resultadoElemento = document.getElementById("resultado");
+    
+                // Crear un objeto XMLHttpRequest
+                var xhttp = new XMLHttpRequest();
+    
+                // Definir la función de manejo de la respuesta
+                xhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        // Obtener la fecha de la respuesta
+                        var fechaActualizacion = this.responseText;
+    
+                        // Mostrar la fecha en el elemento
+                        resultadoElemento.textContent += fechaActualizacion;
+                    }
+                };
+    
+                // Abrir y enviar la solicitud al servidor
+                xhttp.open("GET", "obtener_fecha.php", true);
+                xhttp.send();
+            });
+        </script>
+    </footer>
+    <!-- .................../ JS Code for smooth scrolling /...................... -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="app.js"></script>
+
+    
+</body>
+</html>
+

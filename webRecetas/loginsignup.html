@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recetas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css" />
+    ##javascript_desplegables##
+
+</head>
+
+<body>
+    <div id="navbar-container"></div>
+    <div class="container3">
+        <h1>Login Signup</h1>
+        <div class="container2 right-panel-active">
+            <!-- Sign Up -->
+            <div class="container__form container--signup">
+                <form action="index.php" method="post" class="form" id="form1">
+                    <h2 class="form__title">Sign Up</h2>
+                    <input type="text" placeholder="User" class="input" name="usuario" />
+                    <input type="email" placeholder="Email" class="input" name ="email"/>
+                    <input type="password" placeholder="Password" class="input" name="password" />
+                    <input type="password" placeholder="Confirm Password" class="input" name="password2" />
+                    <button class="button">Sign Up</button>
+                    <input type="hidden" name="accion" value="loginsignup">
+                    <input type="hidden" name="id" value="3">
+                </form>
+            </div>
+            <!-- Log In -->
+            <div class="container__form container--signin">
+                <form action="index.php"  method="post" class="form" id="form2">
+                    <h2 class="form__title">Log In</h2>
+                    <input type="text" placeholder="User" class="input" name="usuario" />
+                    <input type="password" placeholder="Password" class="input" name ="password"/>
+                    <a href="index.php?accion=forgotpsswd&id=1" class="link">Forgot your password?</a>
+                    <button class="button">Log In</button>
+                    <input type="hidden" name="accion" value="loginsignup">
+                    <input type="hidden" name="id" value="2">
+                </form>
+            </div>
+            <!-- Overlay -->
+            <div class="container__overlay">
+                <div class="overlay2">
+                    <div class="overlay__panel overlay--left">
+                        <button class="button" id="signIn">Log In</button>
+                    </div>
+                    <div class="overlay__panel overlay--right">
+                        <button class="button" id="signUp">Sign Up</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const signInButton = document.getElementById('signIn');
+        const signUpButton = document.getElementById('signUp');
+        const container = document.querySelector('.container2');
+    
+        signInButton.addEventListener('click', () => {
+            container.classList.remove('right-panel-active');
+        });
+    
+        signUpButton.addEventListener('click', () => {
+            container.classList.add('right-panel-active');
+        });
+    </script>
+    
+    </body>
+</html>

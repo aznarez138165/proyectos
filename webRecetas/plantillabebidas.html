@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generar PDF</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script>
+        function cargarinfo(idbebida) {
+            $.ajax({
+                url:"index.php?accion=infobebida&idbebida=" + idbebida + "&id=1",
+                success: function (resultado) {
+                    window.location.href = "index.php?accion=infobebida&idbebida=" + idbebida + "&id=1";
+
+                },
+                error: function () {
+                    alert("Se ha producido un error");
+                }
+            })
+        }
+    </script>
+</head>
+<body>
+    <div id="listaBebidas-container">
+        ##fila##
+        <div onclick="cargarinfo(##idbebida##);">&nbsp;&nbsp;&nbsp;&nbsp;##nombre##</div>
+        ##fila##
+    </div>
+    <button id="generate-pdf">GENERAR PDF</button>
+    <script src="scriptListaBebidas.js"></script>
+</body>
+</html>

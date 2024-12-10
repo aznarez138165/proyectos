@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Datos de usuario</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+            integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="style.css" />
+
+        <script>
+            function logout() {
+                if (confirm("¿Estás seguro de que quieres cerrar sesión?")) {
+                    window.location.href = "index.php?accion=logout&id=1";
+                }
+            }
+        </script>
+
+        ##javascript_desplegables##
+    </head>
+    
+    <body>
+        <div id="navbar-container"></div>
+        <div class="container3">
+            <div class="container4">
+                <table border="1">
+                    <tr>
+                        <th>Usuario</th>
+                        <th>Correo</th>
+                        <th>Modificar Datos</th>
+                        <th>Cambiar Contraseña</th>
+                        <th>Eliminar</th>
+                    </tr>
+                    ##fila##
+                    <tr>
+                        <td>##usuario##</td>
+                        <td>##correo##</td>
+                        <td><a href="index.php?accion=bym&id=1&idusuario=##idusuario##">Modificar</a></td>
+                        <td><a href="index.php?accion=bym&id=4&idusuario=##idusuario##">Modificar</a></td>
+                        <td><a href="index.php?accion=bym&id=3&idusuario=##idusuario##">Eliminar</a></td>
+
+                    </tr>
+                    ##fila##
+                
+                </table>
+            </div>
+            <button class="button" onclick=logout()>Log Out</button>
+        </div>
+        
+    
+    </body>
+</html>

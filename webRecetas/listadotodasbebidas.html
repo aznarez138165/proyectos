@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css" />
+	<title>Listado de bebidas</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container container">
+            <input type="checkbox" name="" id="">
+            <div class="hamburger-lines">
+                <span class="line line1"></span>
+                <span class="line line2"></span>
+                <span class="line line3"></span>
+            </div>
+            <ul class="menu-items">
+                <li><a href="index.php?accion=menu&id=1">About Us</a></li>
+                <li><a href="index.php?accion=listadotodoplatos&id=1">Platos</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" id="filtro-toggle">Filtrar Platos por</a>
+                    <ul class="dropdown-menu" id="filtro-menu">
+                        <li><a href="index.php?accion=listado&tipo=areas&id=1">Áreas</a></li>
+                        <li><a href="index.php?accion=listado&tipo=categorias&id=1">Categorías</a></li>
+                        <li><a href="#">Tipo</a></li>
+                </ul>
+            </li>
+                </li>
+                <li><a href="index.php?accion=loginsignup&id=1">Login/SignUp</a></li>
+                
+            </ul>
+            <h1 class="logo">RS</h1>
+        </div>
+    </nav>
+    <div class="listado-container">
+        <ul>
+            ##fila##
+            <li>
+                <img src="##foto##"></img>
+                <span>##nombre##</span>
+            </li>
+           
+            
+            ##fila##
+        </ul>
+    </div>
+
+    <footer id="footer">
+        <h2>Restraunt &copy; all rights reserved</h2>
+        <p id="resultado">La ultima carga de la API es: </p>
+        
+        <script>
+            // Esperar a que el documento HTML esté completamente cargado
+            document.addEventListener("DOMContentLoaded", function() {
+                // Obtener el elemento donde queremos mostrar el resultado
+                var resultadoElemento = document.getElementById("resultado");
+    
+                // Crear un objeto XMLHttpRequest
+                var xhttp = new XMLHttpRequest();
+    
+                // Definir la función de manejo de la respuesta
+                xhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        // Obtener la fecha de la respuesta
+                        var fechaActualizacion = this.responseText;
+    
+                        // Mostrar la fecha en el elemento
+                        resultadoElemento.textContent += fechaActualizacion;
+                    }
+                };
+    
+                // Abrir y enviar la solicitud al servidor
+                xhttp.open("GET", "obtener_fecha.php", true);
+                xhttp.send();
+            });
+        </script>
+    </footer>
+    <!-- .................../ JS Code for smooth scrolling /...................... -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="app.js"></script>
+
+    
+</body>
+</html>
+

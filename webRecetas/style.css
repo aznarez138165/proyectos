@@ -1,0 +1,789 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+/* ///////////..utility classes../////////// */
+
+.container {
+  max-width: 1200px;
+  width: 90%;
+  margin: auto;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.5em 1.5em;
+  text-decoration: none;
+  border-radius: 50px;
+  cursor: pointer;
+  outline: none;
+  margin-top: 1em;
+  text-transform: uppercase;
+  font-weight: small;
+}
+
+.btn-primary {
+  color: #fff;
+  background: #16a083;
+}
+
+.btn-primary:hover {
+  background: #117964;
+  transition: background 0.3s ease-in-out;
+}
+
+/* ............/navbar/............ *
+
+/* desktop mode............/// */
+
+.navbar input[type="checkbox"],
+.navbar .hamburger-lines {
+  display: none;
+}
+
+.navbar {
+  box-shadow: 0px 5px 10px 0px #aaa;
+  position: fixed;
+  width: 100%;
+  background: #fff;
+  color: #000;
+  opacity: 0.85;
+  height: 50px;
+  z-index: 12;
+  top: 0;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  height: 64px;
+  align-items: center;
+}
+
+.menu-items {
+  order: 2;
+  display: flex;
+}
+
+.menu-items li {
+  list-style: none;
+  margin-left: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.menu-items a {
+  text-decoration: none;
+  color: #444;
+  font-weight: 500;
+  transition: color 0.3s ease-in-out;
+}
+
+.menu-items a:hover {
+  color: #117964;
+  transition: color 0.3s ease-in-out;
+}
+
+.logo {
+  order: 1;
+  font-size: 2.3rem;
+  margin-bottom: 0.5rem;
+}
+
+/* ............//// Showcase styling ////......... */
+
+.showcase-area {
+  height: 50vh;
+  background: linear-gradient(
+      rgba(240, 240, 240, 0.144),
+      rgba(255, 255, 255, 0.336)
+    ),
+    url("https://i.postimg.cc/wT3TQS3V/header-image2.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.showcase-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  font-size: 1.6rem;
+}
+
+.main-title {
+  text-transform: uppercase;
+  margin-top: 1.5em;
+}
+
+/* ......//about us//...... */
+
+#aboutUS {
+  padding: 50px 0;
+  background: #f5f5f7;
+}
+
+.aboutUS-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#aboutUS h2 {
+  font-size: 2.3rem;
+}
+
+#aboutUS p {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+#aboutUS .small {
+  font-size: 1.2rem;
+  color: #666;
+  font-weight: 600;
+}
+
+.aboutUS-img {
+  flex: 1 1 400px;
+  padding: 30px;
+  transform: translateX(150%);
+  animation: aboutUS-img-animation 1s ease-in-out forwards;
+}
+
+@keyframes aboutUS-img-animation {
+  100% {
+    transform: translate(0);
+  }
+}
+
+.aboutUS-text {
+  flex: 1 1 400px;
+  padding: 30px;
+  margin: auto;
+  transform: translate(-150%);
+  animation: aboutUS-text-animation 1s ease-in-out forwards;
+}
+
+@keyframes aboutUS-text-animation {
+  100% {
+    transform: translate(0);
+  }
+}
+
+.aboutUS-img img {
+  display: block;
+  height: 400px;
+  max-width: 100%;
+  margin: auto;
+  object-fit: cover;
+  object-position: right;
+}
+
+
+/* ........ Contact Us........... */
+
+#contact {
+  padding: 5rem 0;
+  background: rgb(226, 226, 226);
+}
+
+.contact-container {
+  display: flex;
+  background: #fff;
+}
+
+.contact-img {
+  width: 50%;
+}
+
+.contact-img img {
+  display: block;
+  height: 400px;
+  width: 100%;
+  object-position: center;
+  object-fit: cover;
+}
+
+.form-container {
+  padding: 1rem;
+  width: 50%;
+  margin: auto;
+}
+
+.form-container input {
+  display: block;
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #ddd;
+  padding: 1rem 0;
+  box-shadow: none;
+  outline: none;
+  margin-bottom: 1rem;
+  color: #444;
+  font-weight: 500;
+}
+
+.form-container textarea {
+  display: block;
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #ddd;
+  color: #444;
+  outline: none;
+  padding: 1rem 0;
+  resize: none;
+}
+
+.form-container h2 {
+  font-size: 2.7rem;
+  font-weight: 500;
+  color: #444;
+  margin-bottom: 1rem;
+  margin-top: -1.2rem;
+}
+
+.form-container a {
+  font-size: 1.3rem;
+}
+
+#footer h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  padding: 2.6rem;
+  font-weight: 500;
+  color: #fff;
+  background: rgb(65, 65, 65);
+}
+
+/* ......../ media query /.......... */
+
+@media (max-width: 768px) {
+  .navbar {
+    opacity: 0.95;
+  }
+
+  .navbar-container input[type="checkbox"],
+  .navbar-container .hamburger-lines {
+    display: block;
+  }
+
+  .navbar-container {
+    display: block;
+    position: relative;
+    height: 64px;
+  }
+
+  .navbar-container input[type="checkbox"] {
+    position: absolute;
+    display: block;
+    height: 32px;
+    width: 30px;
+    top: 20px;
+    left: 20px;
+    z-index: 5;
+    opacity: 0;
+  }
+
+  .navbar-container .hamburger-lines {
+    display: block;
+    height: 23px;
+    width: 35px;
+    position: absolute;
+    top: 17px;
+    left: 20px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .navbar-container .hamburger-lines .line {
+    display: block;
+    height: 4px;
+    width: 100%;
+    border-radius: 10px;
+    background: #333;
+  }
+
+  .navbar-container .hamburger-lines .line1 {
+    transform-origin: 0% 0%;
+    transition: transform 0.4s ease-in-out;
+  }
+
+  .navbar-container .hamburger-lines .line2 {
+    transition: transform 0.2s ease-in-out;
+  }
+
+  .navbar-container .hamburger-lines .line3 {
+    transform-origin: 0% 100%;
+    transition: transform 0.4s ease-in-out;
+  }
+
+  .navbar .menu-items {
+    padding-top: 100px;
+    background: #fff;
+    height: 100vh;
+    max-width: 300px;
+    transform: translate(-150%);
+    display: flex;
+    flex-direction: column;
+    margin-left: -40px;
+    padding-left: 50px;
+    transition: transform 0.5s ease-in-out;
+    box-shadow: 5px 0px 10px 0px #aaa;
+  }
+
+  .navbar .menu-items li {
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+    font-weight: 500;
+  }
+
+  .logo {
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    font-size: 2rem;
+  }
+
+  .navbar-container input[type="checkbox"]:checked ~ .menu-items {
+    transform: translateX(0);
+  }
+
+  .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line1 {
+    transform: rotate(35deg);
+  }
+
+  .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line2 {
+    transform: scaleY(0);
+  }
+
+  .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line3 {
+    transform: rotate(-35deg);
+  }
+}
+
+  
+
+@media (max-width: 500px) {
+  html {
+    font-size: 65%;
+  }
+
+  .navbar .menu-items li {
+    font-size: 1.6rem;
+  }
+
+  .form-container {
+    width: 90%;
+  }
+
+  .contact-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contact-img {
+    width: 90%;
+    margin: 3rem auto;
+  }
+
+  .logo {
+    position: absolute;
+    top: 06px;
+    right: 15px;
+    font-size: 3rem;
+  }
+
+  .navbar .menu-items li {
+    margin-bottom: 2.5rem;
+    font-size: 1.8rem;
+    font-weight: 500;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1200px) {
+  .img-container h3 {
+    font-size: 1.5rem;
+  }
+
+  .img-container .btn {
+    font-size: 0.7rem;
+  }
+}
+
+@media (orientation: landscape) and (max-height: 500px) {
+  .showcase-area {
+    height: 50vmax;
+  }
+}
+
+  /* ......./ loginsingup /......... */
+
+:root {
+    /* COLORS */
+    --white: #e9e9e9;
+    --gray: #333;
+    --blue: #0367a6;
+    --lightblue: #008997;
+    /* RADII */
+    --button-radius2: 0.7rem;
+    /* SIZES */
+    --max-width2: 758px;
+    --max-height2: 420px;
+    font-size: 16px;
+}
+    .container3 {
+        align-items: center;
+        background-color: var(--white);
+        background: url("https://i.postimg.cc/wT3TQS3V/header-image2.jpg"); /*url de la imagen*/
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: grid;
+        height: 100vh;
+        place-items: center;
+    }
+    .form__title {
+        font-weight: 300;
+        margin: 0;
+        margin-bottom: 1.25rem;
+    }
+
+    .link {
+        color: var(--gray);
+        font-size: 0.9rem;
+        margin: 1.5rem 0;
+        text-decoration: none;
+    }
+
+    .container2 {
+        background-color: var(--white);
+        border-radius: var(--button-radius2);
+        box-shadow: 0 0.9rem 1.7rem rgba(0, 0, 0, 0.25),
+        0 0.7rem 0.7rem rgba(0, 0, 0, 0.22);
+        height: var(--max-height2);
+        max-width: var(--max-width2);
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+    }
+    .container4 {
+      background-color: var(--white);
+      border-radius: var(--button-radius2);
+      box-shadow: 0 0.9rem 1.7rem rgba(0, 0, 0, 0.25),
+      0 0.7rem 0.7rem rgba(0, 0, 0, 0.22);
+      height: var(--max-height2);
+      max-width: var(--max-width2);
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+  
+      /* Estilos para centrar contenido */
+      display: flex;
+      justify-content: center;
+      align-items: center; /* Para centrar verticalmente también si es necesario */
+
+  }
+  
+  .table {
+      margin-top: 50px;
+      margin-bottom: 50px;
+  }
+  
+
+    .container__form {
+        height: 100%;
+        position: absolute;
+        top: 0;
+        transition: all 0.6s ease-in-out;
+    }
+
+    .container--signin {
+        left: 0;
+        width: 50%;
+        z-index: 2;
+    }
+
+    .container2.right-panel-active .container--signin {
+        transform: translateX(100%);
+    }
+
+    .container--signup {
+        left: 0;
+        opacity: 0;
+        width: 50%;
+        z-index: 1;
+    }
+
+    .container2.right-panel-active .container--signup {
+        animation: show 0.6s;
+        opacity: 1;
+        transform: translateX(100%);
+        z-index: 5;
+    }
+
+    .container__overlay {
+        height: 100%;
+        left: 50%;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        transition: transform 0.6s ease-in-out;
+        width: 50%;
+        z-index: 100;
+    }
+
+    .container2.right-panel-active .container__overlay {
+        transform: translateX(-100%);
+    }
+
+    .overlay2 {
+        background-color: var(--lightblue);
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100%;
+        left: -100%;
+        position: relative;
+        transform: translateX(0);
+        transition: transform 0.6s ease-in-out;
+        width: 200%;
+    }
+
+    .container2.right-panel-active .overlay2 {
+        transform: translateX(50%);
+    }
+
+    .overlay__panel {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: center;
+        position: absolute;
+        text-align: center;
+        top: 0;
+        transform: translateX(0);
+        transition: transform 0.6s ease-in-out;
+        width: 50%;
+    }
+
+    .overlay--left {
+        transform: translateX(-20%);
+    }
+
+    .container2.right-panel-active .overlay--left {
+        transform: translateX(0);
+    }
+
+    .overlay--right {
+        right: 0;
+        transform: translateX(0);
+    }
+
+    .container2.right-panel-active .overlay--right {
+        transform: translateX(20%);
+    }
+
+    .button {
+        background-color: var(--gray);
+        background-image: linear-gradient(90deg, var(--blue) 0%, var(--lightblue) 74%);
+        border-radius: 20px;
+        border: 2px solid var(--blue);
+        color: var(--white);
+        cursor: pointer;
+        font-size: 0.8rem;
+        font-weight: bold;
+        letter-spacing: 0.1rem;
+        padding: 0.9rem 4rem;
+        text-transform: uppercase;
+        transition: transform 80ms ease-in;
+    }
+
+    .form > .btn {
+        margin-top: 1.5rem;
+    }
+
+    .btn:active {
+        transform: scale(0.95);
+    }
+
+    .btn:focus {
+        outline: none;
+    }
+
+    .form {
+        background-color: var(--white);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 0 3rem;
+        height: 100%;
+        text-align: center;
+    }
+
+    .input {
+        background-color: #fff;
+        border: none;
+        padding: 0.9rem 0.9rem;
+        margin: 0.5rem 0;
+        width: 100%;
+    }
+  
+
+  a {
+    color: var(--blue);
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+    @keyframes show {
+        0%,
+        49.99% {
+            opacity: 0;
+            z-index: 1;
+        }
+        50%,
+        100% {
+            opacity: 1;
+            z-index: 5;
+        }
+    }
+    .main-content-container {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+    canvas {
+      max-width: 100%;
+      height: auto; /* Esto mantiene la proporción del canvas */
+      width: 200px; /* Cambia el ancho a un valor más pequeño según sea necesario */
+      height: 100px; /* Cambia el alto a un valor más pequeño según sea necesario */
+    }
+    
+  
+
+  /* Estilos para el contenedor de las banderas */
+.listado-container {
+  position: relative; /* Asegura que las banderas estén posicionadas relativas a este contenedor */
+  margin-top: 70px; /* Ajusta según sea necesario para que las banderas se muestren debajo del navbar */
+}
+
+/* Estilos para las banderas */
+.listado-container img {
+  width: 100px; /* Ajusta el tamaño según sea necesario */
+  height: auto;
+  cursor: pointer;
+  margin-right: 20px; /* Espacio entre las banderas */
+}
+
+
+  .dropdown {
+    position: relative; /* Asegura que el menú desplegable esté posicionado con respecto al elemento padre */
+}
+
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 9999; /* Asegura que el menú esté encima de otros elementos */
+    opacity: 0;
+    transition: opacity 0.3s ease; /* Animación de la opacidad */
+}
+
+.dropdown-menu.show {
+    display: block;
+    opacity: 1;
+}
+
+/* Estilos para el contenedor de la información de la bebida y el plato */
+
+.infoplato-container {
+  margin-top: 70px !important; /* Margen superior para evitar que se superponga con el navbar */
+  padding: 20px; /* Espacio interno alrededor del contenedor */
+  background-color: #f9f9f9; /* Color de fondo del contenedor */
+  border: 1px solid #ddd; /* Borde del contenedor */
+  border-radius: 5px; /* Borde redondeado */
+}
+
+.infoplato-container h1 {
+  font-size: 24px; /* Tamaño de fuente del título */
+  margin-bottom: 10px; /* Margen inferior para separar el título de la foto */
+}
+
+.infoplato-container img {
+  width: 100%; /* Ancho completo de la imagen dentro del contenedor */
+  max-width: 150px; /* Ancho máximo de la imagen */
+  height: auto; /* Altura automática para mantener la proporción de aspecto */
+  margin-bottom: 10px; /* Margen inferior para separar la imagen de la descripción */
+}
+
+.infoplato-container p {
+  font-size: 16px; /* Tamaño de fuente del texto de descripción */
+  line-height: 1.6; /* Altura de línea para una mejor legibilidad */
+}
+
+
+.infobebida-container {
+  margin-top: 70px !important; /* Margen superior para evitar que se superponga con el navbar */
+  padding: 20px; /* Espacio interno alrededor del contenedor */
+  background-color: #f9f9f9; /* Color de fondo del contenedor */
+  border: 1px solid #ddd; /* Borde del contenedor */
+  border-radius: 5px; /* Borde redondeado */
+}
+
+.infobebida-container h1 {
+  font-size: 24px; /* Tamaño de fuente del título */
+  margin-bottom: 10px; /* Margen inferior para separar el título de la foto */
+}
+
+.infobebida-container img {
+  width: 100%; /* Ancho completo de la imagen dentro del contenedor */
+  max-width: 300px; /* Ancho máximo de la imagen */
+  height: auto; /* Altura automática para mantener la proporción de aspecto */
+  margin-bottom: 10px; /* Margen inferior para separar la imagen de la descripción */
+}
+
+.infobebida-container p {
+  font-size: 16px; /* Tamaño de fuente del texto de descripción */
+  line-height: 1.6; /* Altura de línea para una mejor legibilidad */
+}
+
+
+#pdf-content {
+  width: 100%;
+  max-width: 170mm; /* Ajuste del ancho del contenedor */
+  box-sizing: border-box;
+  font-size: 12px; /* Aumentar el tamaño de fuente */
+}
+

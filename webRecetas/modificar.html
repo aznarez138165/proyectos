@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modificacion de usuario</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css" />
+    ##javascript_desplegables##
+
+</head>
+
+<body>
+    <div id="navbar-container"></div>
+    <div class="container3">
+        <h1>Modificacion de usuario</h1>
+        <div class="container2 right-panel-active">
+            <div class="container__form container--signin">
+                <form action="index.php" method="post" class="form" id="form1">
+                    ##fila##
+                    <input type="hidden" name="idusuario" value="##idusuario##">
+                    <input type="text" value="##usuario##" class="input" name="usuario" />
+                    <input type="email" value="##correo##" class="input" name ="correo"/>
+                    <button class="button">Confirm</button>
+                    <input type="hidden" name="accion" value="bym">
+                    <input type="hidden" name="id" value="2">
+                    ##fila##
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

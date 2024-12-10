@@ -1,0 +1,89 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EAT RIGHT FOOD</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css" />
+    ##javascript_desplegables##
+    
+</head>
+
+<body>
+    <div id="navbar-container"></div>
+
+    <section class="showcase-area" id="showcase">
+        <div class="showcase-container">
+            <h1 class="main-title" id="aboutUs">Eat Right Food</h1>
+            <p>Come sano, tu cuerpo lo agradecerá.</p>
+        </div>
+    </section>
+
+    <section id="aboutUS">
+        <div class="aboutUS-wrapper container">
+            <div class="aboutUS-text">
+                <p class="small">Sobre nosotros</p>
+                <h2>Llevamos 10 años haciendo que la comida saludable dure.</h2>
+                <p>
+                    
+                    Bienvenido a nuestro mundo culinario donde la alimentación saludable se encuentra con sabores deliciosos.
+                    Durante la última década, nos hemos dedicado a traerte las mejores recetas para comidas nutritivas y bebidas refrescantes.
+                    Nuestra extensa base de datos incluye una variedad de platos de diferentes cocinas, categorizados para tu conveniencia, y completos con listas detalladas de ingredientes y pasos de preparación.</p><br>
+                <p>
+                    Ya sea que estés buscando una receta rápida de batido, una cena abundante o un postre delicioso, nuestra colección tiene algo para todos.
+                    Creemos que la alimentación saludable no tiene por qué ser aburrida, y nuestra misión es hacer que las comidas nutritivas sean agradables y accesibles para todos.
+                    Únete a nosotros en este viaje gastronómico y descubre la alegría de cocinar con ingredientes frescos y saludables.
+                </p>
+            </div>
+            <div class="aboutUS-img">
+                <img src="https://i.postimg.cc/mgpwzmx9/aboutUS-photo.jpg" alt="food" />
+            </div>
+        </div>
+    </section>
+
+    
+    <footer id="footer">
+        <h2>EAT RIGHT FOOD &copy; todos los derechos reservados</h2>
+        <p id="resultado">La ultima carga de la API es: </p>
+        
+        <script>
+            // Esperar a que el documento HTML esté completamente cargado
+            document.addEventListener("DOMContentLoaded", function() {
+                // Obtener el elemento donde queremos mostrar el resultado
+                var resultadoElemento = document.getElementById("resultado");
+    
+                // Crear un objeto XMLHttpRequest
+                var xhttp = new XMLHttpRequest();
+    
+                // Definir la función de manejo de la respuesta
+                xhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        // Obtener la fecha de la respuesta
+                        var fechaActualizacion = this.responseText;
+    
+                        // Mostrar la fecha en el elemento
+                        resultadoElemento.textContent += fechaActualizacion;
+                    }
+                };
+    
+                // Abrir y enviar la solicitud al servidor
+                xhttp.open("GET", "obtener_fecha.php", true);
+                xhttp.send();
+            });
+        </script>
+    </footer>
+    <!-- .................../ JS Code for smooth scrolling /...................... -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="app.js"></script>
+
+</body>
+
+</html>

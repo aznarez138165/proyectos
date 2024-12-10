@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administrador</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            margin-top: 50px;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 10px 0;
+        }
+        .button {
+            display: inline-block;
+            text-decoration: none;
+            color: #fff;
+            padding: 10px 15px;
+            border-radius: 5px;
+            background-color: #007bff;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Bienvenido al Panel de Administrador</h1>
+    
+    <ul>
+        <li><a class="button" href="insertarUsuario.html">Crear Nuevo Usuario</a></li>
+        <li><a class="button" href="listarUsuarios.php">Gestionar Usuarios</a></li>
+        <li><a class="button" href="crearGrupo.php">Crear Nuevo Grupo</a></li>
+        <li><a class="button" href="asignarGrupos.php">Asignar Alumnos a Grupos</a></li>
+        <!-- Otras funcionalidades que desees añadir -->
+    </ul>
+</body>
+</html>

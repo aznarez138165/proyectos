@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css" />
+	<title>Listado de areas</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<script>
+		var area = "";
+
+		function cargarplatos(nombreArea) {
+			$.ajax({
+				url:"index.php?accion=listadoplatos&tipo=area&nombreArea=" + nombreArea + "&id=1",
+				success: function (resultado) {
+					$("#listadoplatos" + area).html("");
+					$("#listadoplatos" + nombreArea).html(resultado);
+					area = nombreArea;
+				},
+				error: function () {
+					alert("Se ha producido un error");
+				}
+			})
+		}
+
+		function cargarinfo(idplato) {
+			//alert(idplato);
+            $.ajax({
+				url:"index.php?accion=infoplato&idplato=" + idplato + "&id=1",
+				success: function (resultado) {
+                    window.location.href = "index.php?accion=infoplato&idplato=" + idplato + "&id=1";
+
+				},
+				error: function () {
+					alert("Se ha producido un error");
+				}
+			})
+		}
+
+	</script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var filtroToggle = document.getElementById("filtro-toggle");
+            var filtroMenu = document.getElementById("filtro-menu");
+
+            filtroToggle.addEventListener("click", function() {
+                filtroMenu.classList.toggle("show");
+            });
+        });
+    </script>
+        
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container container">
+            <input type="checkbox" name="" id="">
+            <div class="hamburger-lines">
+                <span class="line line1"></span>
+                <span class="line line2"></span>
+                <span class="line line3"></span>
+            </div>
+            <ul class="menu-items">
+                <li><a href="index.php?accion=menu&id=1">About Us</a></li>
+                <li><a href="index.php?accion=listadotodoplatos&id=1">Platos</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" id="filtro-toggle">Filtrar Platos por</a>
+                    <ul class="dropdown-menu" id="filtro-menu">
+                        <li><a href="index.php?accion=listado&tipo=areas&id=1">Áreas</a></li>
+                        <li><a href="index.php?accion=listado&tipo=categorias&id=1">Categorías</a></li>
+                        <li><a href="index.php?accion=listado&tipo=tipo&id=1">Tipo</a></li>
+                </ul>
+            </li>
+                </li>
+                <li><a href="index.php?accion=loginsignup&id=1">Login/SignUp</a></li>
+                
+            </ul>
+            <h1 class="logo">RS</h1>
+        </div>
+    </nav>
+    <div class="listado-container">
+        <ul>
+            ##fila##
+            <li>
+                <img src="images/##area##.png" onclick="cargarplatos('##area##');"></img>
+                <span>##nombre##</span>
+            </li>
+
+            <div id="listadoplatos##area##"></div>
+            ##fila##
+        </ul>
+    </div>
+
+    <footer id="footer">
+        <h2>Restraunt &copy; all rights reserved</h2>
+    </footer>
+    <!-- .................../ JS Code for smooth scrolling /...................... -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="app.js"></script>
+
+    
+</body>
+</html>
+

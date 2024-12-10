@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Gráficos</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+			integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+			crossorigin="anonymous" referrerpolicy="no-referrer" />
+		<link rel="stylesheet" href="style.css" />
+		##javascript_desplegables##
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+	</head>
+    <body>
+        <div id="navbar-container"></div>
+        
+        <div class="main-content-container">
+            <h1>Gráficos de la base de datos</h1>
+            <canvas id="platosPorCategoria" width="400" height="200"></canvas>
+            <canvas id="platosPorArea" width="400" height="200"></canvas>
+            <canvas id="bebidasPorCategoria" width="400" height="200"></canvas>
+
+        </div>
+        <footer id="footer">
+            <h2>Restraunt &copy; all rights reserved</h2>
+            <p id="resultado">La ultima carga de la API es: </p>
+        
+            <script>
+                // Esperar a que el documento HTML esté completamente cargado
+                document.addEventListener("DOMContentLoaded", function() {
+                    // Obtener el elemento donde queremos mostrar el resultado
+                    var resultadoElemento = document.getElementById("resultado");
+        
+                    // Crear un objeto XMLHttpRequest
+                    var xhttp = new XMLHttpRequest();
+        
+                    // Definir la función de manejo de la respuesta
+                    xhttp.onreadystatechange = function() {
+                        if (this.readyState == 4 && this.status == 200) {
+                            // Obtener la fecha de la respuesta
+                            var fechaActualizacion = this.responseText;
+        
+                            // Mostrar la fecha en el elemento
+                            resultadoElemento.textContent += fechaActualizacion;
+                        }
+                    };
+        
+                    // Abrir y enviar la solicitud al servidor
+                    xhttp.open("GET", "obtener_fecha.php", true);
+                    xhttp.send();
+                });
+            </script>
+    
+        </footer>
+        <!-- .................../ JS Code for smooth scrolling /...................... -->
+    
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script>
+    
+            // Configuración del gráfico platos por categoría
+            const ctx = document.getElementById('platosPorCategoria').getContext('2d');
+            const platosPorCategoria = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: data.categorias,
+                    datasets: [{
+                        label: 'Cantidad de Platos',
+                        data: data.totalPlatos,
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+    
+            // Configuración del segundo gráfico platos por área
+            const ctxAreasLine = document.getElementById('platosPorArea').getContext('2d');
+            const platosPorArea = new Chart(ctxAreasLine, {
+                type: 'line',
+                data: {
+                    labels: data.areas,
+                    datasets: [{
+                        label: 'Cantidad de Platos por Área',
+                        data: data.totalPlatosAreas,
+                        fill: false,
+                        borderColor: 'rgba(255, 99, 132, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+    
+            // Configuración del tercer gráfico bebidas por categoría
+            const ctxBebidasCircular = document.getElementById('bebidasPorCategoria').getContext('2d');
+            const bebidasPorCategoria = new Chart(ctxBebidasCircular, {
+                type: 'pie',
+                data: {
+                    labels: data.categoriasBebida,
+                    datasets: [{
+                        label: 'Cantidad de Bebidas por Categoría',
+                        data: data.totalBebidas,
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        </script>
+    </body>
+    
+    </html>

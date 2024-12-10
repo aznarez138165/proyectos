@@ -1,0 +1,17 @@
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var filtroTogglePlatos = document.getElementById("filtro-toggle-platos");
+        var filtroMenuPlatos = document.getElementById("filtro-menu-platos");
+
+        filtroTogglePlatos.addEventListener("click", function() {
+            filtroMenuPlatos.classList.toggle("show");
+        });
+
+        var filtroToggleBebidas = document.getElementById("filtro-toggle-bebidas");
+        var filtroMenuBebidas = document.getElementById("filtro-menu-bebidas");
+
+        filtroToggleBebidas.addEventListener("click", function() {
+            filtroMenuBebidas.classList.toggle("show");
+        });
+    });
+</script>

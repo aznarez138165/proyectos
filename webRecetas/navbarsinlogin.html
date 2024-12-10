@@ -1,0 +1,35 @@
+<!-- menuconlogin.html -->
+
+<nav class="navbar">
+    <div class="navbar-container container">
+        <input type="checkbox" name="" id="">
+        <div class="hamburger-lines">
+            <span class="line line1"></span>
+            <span class="line line2"></span>
+            <span class="line line3"></span>
+        </div>
+        <ul class="menu-items">
+            <li><a href="index.php?accion=menu&id=1">About Us</a></li>
+            <li><a href="index.php?accion=listadotodo&tipo=platos&id=1">Platos</a></li>
+            <li><a href="index.php?accion=listadotodo&tipo=bebidas&id=1">Bebidas</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" id="filtro-toggle-platos">Filtrar Platos por</a>
+                <ul class="dropdown-menu" id="filtro-menu-platos">
+                    <li><a href="index.php?accion=listado&tipo=areas&id=1">Áreas</a></li>
+                    <li><a href="index.php?accion=listado&tipo=categorias&id=1">Categorías</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" id="filtro-toggle-bebidas">Filtrar Bebidas por</a>
+                <ul class="dropdown-menu" id="filtro-menu-bebidas">
+                    <li><a href="index.php?accion=listado&tipo=alcoholicas&id=1">Alcoholicas</a></li>
+                    <li><a href="index.php?accion=listado&tipo=noalcoholicas&id=1">No Alcoholicas</a></li>
+                    <li><a href="index.php?accion=listado&tipo=categoriasbebidas&id=1">Categorías</a></li>
+                </ul>
+            </li>
+            <li><a href="index.php?accion=graficos&id=1">Graficos</a></li>
+            <li><a href="index.php?accion=datosusuario&id=1">Datos Usuario</a></li>
+        </ul>
+        <h1 class="logo">RS</h1>
+    </div>
+</nav>

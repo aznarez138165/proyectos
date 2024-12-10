@@ -32,7 +32,7 @@ La documentación detallada del proyecto se encuentra en la carpeta documentacio
 1. **`procesoETL.pdf`**  
    Descripción del flujo ETL y su implementación en el proyecto.
    
-2. **`dataWareHouer.pdf`**  
+2. **`dataWareHouse.pdf`**  
    Descripción del Data Warehouse y su estructura en la base de datos.
 
 3. **`consultas.pdf`**  
